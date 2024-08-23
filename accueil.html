@@ -1,0 +1,518 @@
+<html><head><base href=""><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hugo Sanchez | Expert en Cybersécurité</title>
+<style>
+  :root {
+    --primary-color: #00ff00;
+    --secondary-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --background-color: #0f0f0f;
+    --accent-color: #ff00ff;
+  }
+  
+  body {
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    cursor: default;
+  }
+  
+  ::selection {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+  }
+  
+  header {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid var(--primary-color);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 10px var(--primary-color);
+  }
+  
+  nav {
+    background-color: var(--secondary-color);
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 255, 0, 0.3);
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin: 0 1rem;
+  }
+  
+  nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+  }
+  
+  nav ul li a:hover, nav ul li a.active {
+    color: var(--background-color);
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+  }
+  
+  main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+  
+  .hero {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .hero h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-color);
+  }
+  
+  .skills-section {
+    margin-bottom: 3rem;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .skill-card {
+    background-color: rgba(26, 26, 26, 0.5);
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+  }
+  
+  .skill-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .featured-projects {
+    margin-bottom: 3rem;
+  }
+  
+  .project-card {
+    background-color: rgba(26, 26, 26, 0.5);
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+  }
+  
+  .project-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+  }
+  
+  footer {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-top: 2px solid var(--primary-color);
+  }
+  
+  .binary-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.1;
+  }
+  
+  .binary-column {
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+    line-height: 20px;
+    white-space: nowrap;
+    animation: binary-rain 20s linear infinite;
+    color: var(--primary-color);
+  }
+  
+  @keyframes binary-rain {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    
+    nav ul {
+      flex-wrap: wrap;
+    }
+    
+    nav ul li {
+      margin: 0.25rem;
+    }
+    
+    .hero h2 {
+      font-size: 1.5rem;
+    }
+    
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="binary-background" id="binaryBackground"></div>
+
+  <header>
+    <h1>Hugo Sanchez</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="accueil.html" class="active">Accueil</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="ressources.html">Ressources</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <section class="hero">
+      <h2>Expert en Cybersécurité</h2>
+      <p>Protégez votre infrastructure numérique avec des solutions de sécurité innovantes et sur mesure.</p>
+      <a href="contact.html" class="cta-button">Contactez-moi</a>
+    </section>
+    
+    <section class="skills-section">
+      <h2>Compétences clés</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Sécurité des réseaux</h3>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-bug"></i>
+          <h3>Tests d'intrusion</h3>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-lock"></i>
+          <h3>Cryptographie</h3>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-code"></i>
+          <h3>Sécurité des applications</h3>
+        </div>
+      </div>
+    </section>
+    
+    <section class="featured-projects">
+      <h2>Projets en vedette</h2>
+      <div class="project-card">
+        <h3>Système de détection d'intrusion IA</h3>
+        <p>Développement d'un système de détection d'intrusion basé sur l'intelligence artificielle pour une protection en temps réel contre les cyberattaques.</p>
+      </div>
+      <div class="project-card">
+        <h3>Audit de sécurité pour une banque internationale</h3>
+        <p>Réalisation d'un audit complet de sécurité pour une grande banque internationale, identifiant et corrigeant les vulnérabilités critiques.</p>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Hugo Sanchez - Expert en Cybersécurité. Tous droits réservés. | Sécurisé par des protocoles de pointe</p>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+  <script>
+    const header = document.querySelector('header');
+    const title = header.querySelector('h1');
+    
+    header.addEventListener('mousemove', (e) => {
+      const rect = header.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      title.style.textShadow = `
+        ${x / 50}px ${y / 50}px 5px rgba(0, 255, 0, 0.7),
+        ${-x / 50}px ${-y / 50}px 5px rgba(255, 0, 255, 0.7)
+      `;
+    });
+    
+    header.addEventListener('mouseleave', () => {
+      title.style.textShadow = '0 0 10px var(--primary-color)';
+    });
+    
+    const binaryBackground = document.getElementById('binaryBackground');
+    const createBinaryColumn = () => {
+      const column = document.createElement('div');
+      column.className = 'binary-column';
+      column.style.left = `${Math.random() * 100}%`;
+      column.style.animationDuration = `${15 + Math.random() * 10}s`;
+      
+      let binaryString = '';
+      for (let i = 0; i < 50; i++) {
+        binaryString += Math.random() > 0.5 ? '1' : '0';
+      }
+      column.textContent = binaryString;
+      
+      binaryBackground.appendChild(column);
+      
+      setTimeout(() => {
+        column.remove();
+      }, 20000);
+    };
+    
+    setInterval(createBinaryColumn, 1000);
+
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.style.backgroundColor = 'rgba(26, 26, 26, 0.9)';
+        nav.style.boxShadow = '0 2px 10px rgba(0, 255, 0, 0.5)';
+      } else {
+        nav.style.backgroundColor = 'var(--secondary-color)';
+        nav.style.boxShadow = '0 2px 10px rgba(0, 255, 0, 0.3)';
+      }
+    });
+
+    // Animation des cartes de compétences
+    const skillCards = document.querySelectorAll('.skill-card');
+    skillCards.forEach(card => {
+      card.addEventListener('mouseover', () => {
+        card.style.backgroundColor = 'rgba(0, 255, 0, 0.2)';
+      });
+      card.addEventListener('mouseout', () => {
+        card.style.backgroundColor = 'rgba(26, 26, 26, 0.5)';
+      });
+    });
+
+    // Animation des cartes de projets
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+      card.addEventListener('mouseover', () => {
+        card.style.backgroundColor = 'rgba(0, 255, 0, 0.2)';
+      });
+      card.addEventListener('mouseout', () => {
+        card.style.backgroundColor = 'rgba(26, 26, 26, 0.5)';
+      });
+    });
+
+    // Easter egg: Code secret
+    let secretCode = '';
+    const secretPattern = 'cybersec';
+    
+    document.addEventListener('keydown', (e) => {
+      secretCode += e.key.toLowerCase();
+      if (secretCode.length > secretPattern.length) {
+        secretCode = secretCode.slice(1);
+      }
+      if (secretCode === secretPattern) {
+        document.body.style.animation = 'matrix-effect 2s';
+        setTimeout(() => {
+          document.body.style.animation = '';
+        }, 2000);
+      }
+    });
+
+    // Animation de l'effet Matrix
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes matrix-effect {
+        0% { filter: hue-rotate(0deg); }
+        50% { filter: hue-rotate(180deg); }
+        100% { filter: hue-rotate(360deg); }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Animation du bouton CTA
+    const ctaButton = document.querySelector('.cta-button');
+    ctaButton.addEventListener('mouseover', () => {
+      ctaButton.style.transform = 'scale(1.1)';
+    });
+    ctaButton.addEventListener('mouseout', () => {
+      ctaButton.style.transform = 'scale(1)';
+    });
+
+    // Animation des icônes de compétences
+    const skillIcons = document.querySelectorAll('.skill-card i');
+    skillIcons.forEach(icon => {
+      icon.addEventListener('mouseover', () => {
+        icon.style.transform = 'rotate(360deg) scale(1.2)';
+        icon.style.transition = 'transform 0.5s ease';
+      });
+      icon.addEventListener('mouseout', () => {
+        icon.style.transform = 'rotate(0deg) scale(1)';
+      });
+    });
+
+    // Effet de typage pour le titre principal
+    const typeWriter = (text, i, fnCallback) => {
+      if (i < text.length) {
+        document.querySelector("header h1").innerHTML = text.substring(0, i+1) + '<span aria-hidden="true"></span>';
+        setTimeout(() => {
+          typeWriter(text, i + 1, fnCallback)
+        }, 100);
+      } else if (typeof fnCallback == 'function') {
+        setTimeout(fnCallback, 700);
+      }
+    }
+
+    window.onload = () => {
+      const text = "Hugo Sanchez";
+      typeWriter(text, 0, () => {
+        document.querySelector("header h1 span").style.display = "none";
+      });
+    }
+
+    // Animation de défilement fluide
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Effet de particules pour le fond
+    class Particle {
+      constructor() {
+        this.x = Math.random() * window.innerWidth;
+        this.y = Math.random() * window.innerHeight;
+        this.size = Math.random() * 5 + 1;
+        this.speedX = Math.random() * 3 - 1.5;
+        this.speedY = Math.random() * 3 - 1.5;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.size > 0.2) this.size -= 0.1;
+      }
+      draw() {
+        ctx.fillStyle = 'rgba(0, 255, 0, 0.8)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    const canvas = document.createElement('canvas');
+    document.body.appendChild(canvas);
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '-1';
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particlesArray;
+
+    function init() {
+      particlesArray = [];
+      for (let i = 0; i < 100; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+        if (particlesArray[i].size <= 0.2) {
+          particlesArray.splice(i, 1);
+          i--;
+          particlesArray.push(new Particle());
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      init();
+    });
+  </script>
+</body>
+</html>

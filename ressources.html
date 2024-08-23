@@ -1,0 +1,504 @@
+<html><head><base href=""><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hugo Sanchez | Ressources en Cybersécurité</title>
+<style>
+  :root {
+    --primary-color: #00ff00;
+    --secondary-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --background-color: #0f0f0f;
+    --accent-color: #ff00ff;
+  }
+  
+  body {
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    cursor: default;
+  }
+  
+  ::selection {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+  }
+  
+  header {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid var(--primary-color);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 0 10px var(--primary-color);
+  }
+  
+  nav {
+    background-color: var(--secondary-color);
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 255, 0, 0.3);
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin: 0 1rem;
+  }
+  
+  nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+  }
+  
+  nav ul li a:hover, nav ul li a.active {
+    color: var(--background-color);
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+  }
+  
+  main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+  
+  .resource-section {
+    margin-bottom: 3rem;
+  }
+  
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .resource-card {
+    background-color: rgba(26, 26, 26, 0.5);
+    padding: 1.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.3);
+  }
+  
+  .resource-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+  }
+  
+  .resource-card a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .resource-card a:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 5px var(--primary-color);
+  }
+  
+  footer {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-top: 2px solid var(--primary-color);
+  }
+  
+  .binary-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.1;
+  }
+  
+  .binary-column {
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+    line-height: 20px;
+    white-space: nowrap;
+    animation: binary-rain 20s linear infinite;
+    color: var(--primary-color);
+  }
+  
+  @keyframes binary-rain {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    
+    nav ul {
+      flex-wrap: wrap;
+    }
+    
+    nav ul li {
+      margin: 0.25rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="binary-background" id="binaryBackground"></div>
+
+  <header>
+    <h1>Hugo Sanchez</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="accueil.html">Accueil</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="ressources.html" class="active">Ressources</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <h2>Ressources en Cybersécurité</h2>
+    
+    <section class="resource-section">
+      <h3>Livres recommandés</h3>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3>The Web Application Hacker's Handbook</h3>
+          <p>Par Dafydd Stuttard et Marcus Pinto</p>
+          <a href="https://www.amazon.com/Web-Application-Hackers-Handbook-Exploiting/dp/1118026470" target="_blank">Voir sur Amazon</a>
+        </div>
+        <div class="resource-card">
+          <h3>Practical Malware Analysis</h3>
+          <p>Par Michael Sikorski et Andrew Honig</p>
+          <a href="https://www.amazon.com/Practical-Malware-Analysis-Hands-Dissecting/dp/1593272901" target="_blank">Voir sur Amazon</a>
+        </div>
+        <div class="resource-card">
+          <h3>The Art of Memory Forensics</h3>
+          <p>Par Michael Hale Ligh et al.</p>
+          <a href="https://www.amazon.com/Art-Memory-Forensics-Detecting-Malware/dp/1118825098" target="_blank">Voir sur Amazon</a>
+        </div>
+      </div>
+    </section>
+    
+    <section class="resource-section">
+      <h3>Cours en ligne</h3>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3>Cybersecurity Specialization</h3>
+          <p>Université du Maryland sur Coursera</p>
+          <a href="https://www.coursera.org/specializations/cyber-security" target="_blank">S'inscrire</a>
+        </div>
+        <div class="resource-card">
+          <h3>Offensive Security Certified Professional (OSCP)</h3>
+          <p>Par Offensive Security</p>
+          <a href="https://www.offensive-security.com/pwk-oscp/" target="_blank">En savoir plus</a>
+        </div>
+        <div class="resource-card">
+          <h3>CompTIA Security+</h3>
+          <p>Certification de sécurité fondamentale</p>
+          <a href="https://www.comptia.org/certifications/security" target="_blank">Détails de la certification</a>
+        </div>
+      </div>
+    </section>
+    
+    <section class="resource-section">
+      <h3>Outils essentiels</h3>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3>Wireshark</h3>
+          <p>Analyseur de protocole réseau</p>
+          <a href="https://www.wireshark.org/" target="_blank">Télécharger</a>
+        </div>
+        <div class="resource-card">
+          <h3>Metasploit Framework</h3>
+          <p>Plateforme de test de pénétration</p>
+          <a href="https://www.metasploit.com/" target="_blank">En savoir plus</a>
+        </div>
+        <div class="resource-card">
+          <h3>Nmap</h3>
+          <p>Outil de découverte réseau et d'audit de sécurité</p>
+          <a href="https://nmap.org/" target="_blank">Site officiel</a>
+        </div>
+      </div>
+    </section>
+    
+    <section class="resource-section">
+      <h3>Blogs et sites web</h3>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <h3>Krebs on Security</h3>
+          <p>Blog de Brian Krebs sur la cybersécurité</p>
+          <a href="https://krebsonsecurity.com/" target="_blank">Visiter</a>
+        </div>
+        <div class="resource-card">
+          <h3>Dark Reading</h3>
+          <p>Actualités et analyses sur la cybersécurité</p>
+          <a href="https://www.darkreading.com/" target="_blank">Lire</a>
+        </div>
+        <div class="resource-card">
+          <h3>OWASP</h3>
+          <p>Organisation pour la sécurité des applications web</p>
+          <a href="https://owasp.org/" target="_blank">Explorer</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 Hugo Sanchez - Expert en Cybersécurité. Tous droits réservés. | Sécurisé par des protocoles de pointe</p>
+  </footer>
+
+  <script>
+    const header = document.querySelector('header');
+    const title = header.querySelector('h1');
+    
+    header.addEventListener('mousemove', (e) => {
+      const rect = header.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      title.style.textShadow = `
+        ${x / 50}px ${y / 50}px 5px rgba(0, 255, 0, 0.7),
+        ${-x / 50}px ${-y / 50}px 5px rgba(255, 0, 255, 0.7)
+      `;
+    });
+    
+    header.addEventListener('mouseleave', () => {
+      title.style.textShadow = '0 0 10px var(--primary-color)';
+    });
+    
+    const binaryBackground = document.getElementById('binaryBackground');
+    const createBinaryColumn = () => {
+      const column = document.createElement('div');
+      column.className = 'binary-column';
+      column.style.left = `${Math.random() * 100}%`;
+      column.style.animationDuration = `${15 + Math.random() * 10}s`;
+      
+      let binaryString = '';
+      for (let i = 0; i < 50; i++) {
+        binaryString += Math.random() > 0.5 ? '1' : '0';
+      }
+      column.textContent = binaryString;
+      
+      binaryBackground.appendChild(column);
+      
+      setTimeout(() => {
+        column.remove();
+      }, 20000);
+    };
+    
+    setInterval(createBinaryColumn, 1000);
+
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.style.backgroundColor = 'rgba(26, 26, 26, 0.9)';
+        nav.style.boxShadow = '0 2px 10px rgba(0, 255, 0, 0.5)';
+      } else {
+        nav.style.backgroundColor = 'var(--secondary-color)';
+        nav.style.boxShadow = '0 2px 10px rgba(0, 255, 0, 0.3)';
+      }
+    });
+
+    // Animation des cartes de ressources
+    const resourceCards = document.querySelectorAll('.resource-card');
+    resourceCards.forEach(card => {
+      card.addEventListener('mouseover', () => {
+        card.style.backgroundColor = 'rgba(0, 255, 0, 0.1)';
+      });
+      card.addEventListener('mouseout', () => {
+        card.style.backgroundColor = 'rgba(26, 26, 26, 0.5)';
+      });
+    });
+
+    // Easter egg : Code secret
+    let secretCode = '';
+    const secretPattern = 'ressources';
+    
+    document.addEventListener('keydown', (e) => {
+      secretCode += e.key.toLowerCase();
+      if (secretCode.length > secretPattern.length) {
+        secretCode = secretCode.slice(1);
+      }
+      if (secretCode === secretPattern) {
+        document.body.style.animation = 'matrix-effect 2s';
+        setTimeout(() => {
+          document.body.style.animation = '';
+        }, 2000);
+      }
+    });
+
+    // Animation de l'effet Matrix
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes matrix-effect {
+        0% { filter: hue-rotate(0deg); }
+        50% { filter: hue-rotate(180deg); }
+        100% { filter: hue-rotate(360deg); }
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Effet de typage pour le titre principal
+    const typeWriter = (text, i, fnCallback) => {
+      if (i < text.length) {
+        document.querySelector("header h1").innerHTML = text.substring(0, i+1) + '<span aria-hidden="true"></span>';
+        setTimeout(() => {
+          typeWriter(text, i + 1, fnCallback)
+        }, 100);
+      } else if (typeof fnCallback == 'function') {
+        setTimeout(fnCallback, 700);
+      }
+    }
+
+    window.onload = () => {
+      const text = "Hugo Sanchez";
+      typeWriter(text, 0, () => {
+        document.querySelector("header h1 span").style.display = "none";
+      });
+    }
+
+    // Animation des liens dans les cartes de ressources
+    const resourceLinks = document.querySelectorAll('.resource-card a');
+    resourceLinks.forEach(link => {
+      link.addEventListener('mouseover', () => {
+        link.style.textShadow = '0 0 10px var(--accent-color)';
+      });
+      link.addEventListener('mouseout', () => {
+        link.style.textShadow = 'none';
+      });
+    });
+
+    // Effet de survol pour les titres des sections
+    const sectionTitles = document.querySelectorAll('.resource-section > h3');
+    sectionTitles.forEach(title => {
+      title.addEventListener('mouseover', () => {
+        title.style.color = 'var(--accent-color)';
+        title.style.transform = 'scale(1.05)';
+        title.style.transition = 'all 0.3s ease';
+      });
+      title.addEventListener('mouseout', () => {
+        title.style.color = 'var(--primary-color)';
+        title.style.transform = 'scale(1)';
+      });
+    });
+
+    // Animation de défilement fluide
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Effet de particules pour le fond
+    class Particle {
+      constructor() {
+        this.x = Math.random() * window.innerWidth;
+        this.y = Math.random() * window.innerHeight;
+        this.size = Math.random() * 5 + 1;
+        this.speedX = Math.random() * 3 - 1.5;
+        this.speedY = Math.random() * 3 - 1.5;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.size > 0.2) this.size -= 0.1;
+      }
+      draw() {
+        ctx.fillStyle = 'rgba(0, 255, 0, 0.8)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    const canvas = document.createElement('canvas');
+    document.body.appendChild(canvas);
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '-1';
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particlesArray;
+
+    function init() {
+      particlesArray = [];
+      for (let i = 0; i < 100; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+        if (particlesArray[i].size <= 0.2) {
+          particlesArray.splice(i, 1);
+          i--;
+          particlesArray.push(new Particle());
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      init();
+    });
+  </script>
+</body>
+</html>
