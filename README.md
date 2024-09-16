@@ -1,16 +1,4 @@
+Voici le lien de mon portfolio (scolaire)
 
 
-à faire :
-
-
-
-
-
-
-
-
-
-
-
-problèmes :
-
+https://hugoshez.github.io/portfolio/index.html
